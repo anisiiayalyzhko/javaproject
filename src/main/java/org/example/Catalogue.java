@@ -27,11 +27,21 @@ public class Catalogue {
 
     public Publication findPublicationByTitle(String title) {
         for (Publication p : publications) {
-            if (p.getTitle().toLowerCase().contains(title.toLowerCase())) {
+            if (p.getTitle().equalsIgnoreCase(title.trim())) {
                 return p;
             }
         }
         return null;
+    }
+
+    public ArrayList<Publication> findAllByTitle(String title) {
+        ArrayList<Publication> results = new ArrayList<>();
+        for (Publication p : publications) {
+            if (p.getTitle().toLowerCase().contains(title.toLowerCase())) {
+                results.add(p);
+            }
+        }
+        return results;
     }
 
     public List<Publication> getAllPublications() {

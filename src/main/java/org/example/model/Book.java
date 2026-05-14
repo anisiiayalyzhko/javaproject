@@ -1,6 +1,6 @@
 package org.example.model;
 
-class Book extends Publication {
+public class Book extends Publication {
     private String author;
     private String publisher;
     private String genre;
